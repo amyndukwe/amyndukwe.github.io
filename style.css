@@ -1,16 +1,29 @@
-body { margin: 0; font-family: "Agrave Pro", Arial, sans-serif; color: #15302A; background: #F6F4EC; line-height: 1.6; }
-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 16px 32px; background: #15302A; position: sticky; top: 0; }
-.brand { color: #F6F4EC; font-weight: 700; text-decoration: none; font-size: 20px; }
-nav a { color: #C9D6CF; margin-left: 20px; text-decoration: none; }
-nav a:hover { color: #E8A33D; }
+@font-face { font-family: "Agrave Pro"; src: url("fonts/AgravePro-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Agrave Pro"; src: url("fonts/AgravePro-Bold.woff2") format("woff2"); font-weight: 700; }
+
+:root {
+  --blue: #1E3A8A;
+  --blue-soft: #E8EFFE;
+  --pink: #E0457B;
+  --pink-soft: #FCE4EE;
+  --gold: #C9A227;
+  --heading: "Agrave Pro", Georgia, serif;
+  --body: "Segoe UI", Arial, sans-serif;
+}
+body { margin: 0; font-family: var(--body); color: #1B2540; background: #F7F9FF; line-height: 1.6; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 16px 32px; background: var(--blue); position: sticky; top: 0; border-bottom: 4px solid var(--gold); }
+.brand { color: #fff; font-family: var(--heading); font-weight: 700; text-decoration: none; font-size: 26px; }
+nav a { color: #DCE6FF; margin-left: 20px; text-decoration: none; font-family: var(--heading); font-size: 20px; }
+nav a:hover { color: var(--gold); }
 main { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-section { padding: 48px 0; border-bottom: 1px solid #DED8C6; }
+section { padding: 48px 0; border-bottom: 1px solid #D5DDF3; }
 .hero { padding: 80px 0 48px; }
-.eyebrow { color: #8A5207; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-h1 { font-size: 40px; line-height: 1.2; margin: 8px 0 16px; }
-h2 { font-size: 30px; margin: 0 0 16px; }
+.eyebrow { color: var(--pink); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+h1, h2, h3 { font-family: var(--heading); color: var(--blue); }
+h1 { font-size: 48px; line-height: 1.15; margin: 8px 0 16px; }
+h2 { font-size: 36px; margin: 0 0 16px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.card { background: #FFFDF7; border: 1px solid #DED8C6; border-radius: 12px; padding: 20px; }
-.soon { color: #8A5207; font-size: 14px; }
-a { color: #8A5207; }
-footer { text-align: center; padding: 32px; color: #3F4A45; }
+.card { background: #fff; border: 1px solid #D5DDF3; border-top: 5px solid var(--pink); border-radius: 12px; padding: 20px; }
+.soon { color: var(--pink); font-size: 14px; font-weight: 700; }
+a { color: var(--blue); }
+footer { text-align: center; padding: 32px; background: var(--blue-soft); color: #1B2540; border-top: 4px solid var(--gold); }
