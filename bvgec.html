@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BVGEC financial model | Amara Ndukwe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html#top">
+      <span class="logo">AN</span>
+      <span class="name">Amara Ndukwe</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#powerapps">Power Apps</a>
+      <a href="index.html#responsible">Responsible AI</a>
+      <a href="index.html#reflection">Reflection</a>
+      <a href="index.html#goals">Career goals</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case">
+    <section>
+      <a class="back" href="index.html#projects">Back to projects</a>
+      <h1>BVGEC financial model: is the solar project worth building?</h1>
+      <p>Team project for Bow Valley Green Energy Co-op (BVGEC), CMPT 3835. Team: Amara, Deogyne, Mara and Rahul.</p>
+      <div class="stats">
+        <div class="stat"><b>$200,643</b>base case NPV</div>
+        <div class="stat"><b>6.97%</b>project IRR</div>
+        <div class="stat"><b>Year 12</b>payback</div>
+        <div class="stat"><b>33.4%</b>output drop before NPV reaches $0</div>
+      </div>
+    </section>
+
+    <section class="photo2">
+      <h2>The problem</h2>
+      <p>BVGEC wanted to know whether its solar projects would earn more than they cost over a 25-year panel life. We expressed the answer as net present value (NPV), and we also needed to show how sure we were, since the model's generation figures ran higher than the measured data.</p>
+      <h2>My role</h2>
+      <p>I was Scrum Master and the machine analysis student on the team. [Add what you personally did: the notebook, the calculator, the deployment, the chatbot, the client deck.]</p>
+    </section>
+
+    <section>
+      <h2>What we did</h2>
+      <ul>
+        <li>Cleaned the data (601 rows down to 579) and explored it: output follows sunlight and temperature, and snow cuts it sharply.</li>
+        <li>Built a calculation engine that follows BVGEC's Excel projection, then checked it against the calculator.</li>
+        <li>Tested the model against measured output, ran sensitivity analysis, and compared payout plans.</li>
+        <li>Deployed a calculator and a rules-based chatbot so the team could test numbers themselves.</li>
+      </ul>
+      <p><a href="https://bvgec-npv.streamlit.app/">Try the live calculator</a></p>
+    </section>
+
+    <section class="photo1">
+      <h2>What we found</h2>
+      <div class="fig">
+        <img src="bvgec-seasonality.png" alt="Average generation by month, high in summer and low in winter">
+        <p>Output follows the seasons: about 16,000 kWh in July against about 2,900 in December.</p>
+      </div>
+      <div class="fig">
+        <img src="bvgec-gap-npv.png" alt="Project NPV as the generation gap grows">
+        <p>NPV stays positive even if the model over-estimates generation by 13.8% (NPV $127,832).</p>
+      </div>
+      <div class="fig">
+        <img src="bvgec-tornado.png" alt="Tornado chart: panel output and energy rate move NPV the most">
+        <p>Panel output and energy rate move NPV the most, by $120,201 each when changed by 10%.</p>
+      </div>
+      <div class="fig">
+        <img src="bvgec-heatmap.png" alt="Heatmap of NPV for combinations of output and energy rate">
+        <p>NPV for every combination of output and energy rate.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Proceed: NPV is positive in every gap we tested.</li>
+        <li>Budget on measured output, because the gap grew from 0.3% in 2021 to 6.4% in 2025.</li>
+        <li>Pay members 5% to 7% a year from year 4, which keeps retained earnings above $0.</li>
+        <li>Confirm the discount rate and energy price, because they move the answer most.</li>
+      </ul>
+    </section>
+
+    <section class="photo2">
+      <h2>Responsible AI and limits</h2>
+      <ul>
+        <li>The data was synthetic practice data, so the findings show the method and not real site performance.</li>
+        <li>Five years is a short window for judging panel degradation.</li>
+        <li>The discount rate (2%) is our placeholder, since BVGEC's spreadsheet gives none.</li>
+        <li>The chatbot is rules-based, so every answer comes from the same formulas as the model.</li>
+      </ul>
+      <h2>What I would improve</h2>
+      <p>[Add in your own words: for example, using real site data, a longer record, and confirmed cost inputs.]</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with help from Claude, an AI assistant, and checked by me. © 2026 Amara Ndukwe</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>
