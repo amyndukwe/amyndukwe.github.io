@@ -88,7 +88,7 @@ footer { text-align: center; padding: 32px; color: #9AA3B8; }
   color: var(--blue);
 }
 .card p {
-  color: #C9D1E6;
+  color: #00838f;
   margin: 0 0 12px;
 }
 .card p:last-child {
