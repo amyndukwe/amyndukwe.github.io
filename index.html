@@ -4,12 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amara Ndukwe | Data & ML Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a class="brand" href="#top">Amara Ndukwe</a>
-    <nav>
+    <a class="brand" href="#top">
+      <span class="logo">AN</span>
+      <span class="name">Amara Ndukwe</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#powerapps">Power Apps</a>
@@ -21,10 +29,14 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <p class="eyebrow">Data & machine learning analyst in training</p>
-      <h1>I close the gap between what technology can do and what people need.</h1>
-      <p class="lead">[One sentence in your own words: what you do and the problems you want to solve.]</p>
+    <section class="hero photo1">
+      <div class="hero-inner">
+        <h1>I close the gap between what technology can do and what people need.</h1>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">Projects</a>
+          <a class="btn tertiary" href="#contact">Contact me</a>
+        </div>
+      </div>
     </section>
 
     <section id="about">
@@ -32,7 +44,7 @@
       <p>[Your short introduction: your background, the NorQuest diploma, and what you bring from Power Platform work.]</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="photo2">
       <h2>Projects</h2>
       <div class="cards">
         <div class="card"><h3>GoAuto</h3><p>Predicting monthly service revenue for dealerships.</p><p class="soon">Case study coming next</p></div>
@@ -46,7 +58,7 @@
       <p>[Two or three examples, described without client or employer names.]</p>
     </section>
 
-    <section id="responsible">
+    <section id="responsible" class="photo1">
       <h2>Responsible AI in practice</h2>
       <p>[Limits, bias, privacy and explainability, with examples from your projects.]</p>
     </section>
@@ -56,7 +68,7 @@
       <p>[What you did, what you learned, what you would improve.]</p>
     </section>
 
-    <section id="goals">
+    <section id="goals" class="photo2">
       <h2>Career goals</h2>
       <p>[The roles you want and how you want to grow.]</p>
     </section>
@@ -76,5 +88,18 @@
   <footer>
     <p>How I used AI: [we will write this together]. © 2026 Amara Ndukwe</p>
   </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+  </script>
 </body>
 </html>
