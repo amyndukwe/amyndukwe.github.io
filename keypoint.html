@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facial keypoint detection | Amara Ndukwe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html#top">
+      <span class="logo">AN</span>
+      <span class="name">Amara Ndukwe</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#powerapps">Power Apps</a>
+      <a href="index.html#responsible">Responsible AI</a>
+      <a href="index.html#reflection">Reflection</a>
+      <a href="index.html#goals">Career goals</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case">
+    <section>
+      <a class="back" href="index.html#projects">Back to projects</a>
+      <h1>Facial keypoint detection with transfer learning</h1>
+      <p>Computer vision lab (CMPT 3520): teaching a pre-trained image model to find 68 landmarks on a face.</p>
+      <div class="stats">
+        <div class="stat"><b>68</b>landmarks per face (136 numbers)</div>
+        <div class="stat"><b>ResNet-18</b>frozen, pre-trained backbone</div>
+        <div class="stat"><b>[RMSE __]</b>test error, standardised units</div>
+        <div class="stat"><b>[__ epochs]</b>trained on CPU</div>
+      </div>
+    </section>
+
+    <section class="photo2">
+      <h2>The problem</h2>
+      <p>Many face tools, such as filters, alignment and accessibility features, start by locating points on the face. The task was to predict the x and y position of 68 landmarks from a face image, reusing a network trained on millions of general photos instead of training one from scratch.</p>
+      <h2>My role</h2>
+      <p>[Add your part: you completed the notebook on your own machine, fixed the dataset download, chose and explained the design, and tested the model on your own photo.]</p>
+    </section>
+
+    <section>
+      <h2>What I did</h2>
+      <ul>
+        <li>Loaded a public Kaggle face-keypoint dataset and prepared the images (256×256, normalised with the ImageNet statistics the backbone expects).</li>
+        <li>Froze the ResNet-18 backbone and replaced its final layer with a regression head: two hidden layers (512 and 256 units) with batch normalisation and dropout, ending in 136 outputs with no activation.</li>
+        <li>Trained only the head with mean squared error loss and the Adam optimiser, and tracked train and test RMSE each epoch.</li>
+        <li>Saved the model, reloaded it into a fresh network, and confirmed it gave the same test error.</li>
+        <li>Tested it on a photo of my own.</li>
+      </ul>
+    </section>
+
+    <section class="photo1">
+      <h2>What I found</h2>
+      <p>[Add your result: final train and test RMSE, plus the training curve screenshot.]</p>
+      <p>Train and test error fell together with a small gap, so the model was not overfitting. It was limited by the frozen backbone, whose features were built for general objects and not faces. Unfreezing the last block with a much smaller learning rate would be the next step to try.</p>
+      <p>On my own photo the predictions were noticeably worse than on the test set. My photo showed the face small in the frame with lots of background, while the training images were tightly cropped, so the points shifted away from the real landmarks.</p>
+    </section>
+
+    <section>
+      <h2>Responsible AI and limits</h2>
+      <ul>
+        <li><b>Privacy:</b> I used a public dataset and my own photo. This page shows [no personal photo / my photo, which I chose to share].</li>
+        <li><b>Generalisation:</b> I tested on one photo, so I cannot say how well the model works across different faces, lighting, poses or image framing.</li>
+        <li><b>Not recognition:</b> the model locates landmarks. It does not identify anyone, and it should not be presented as doing so.</li>
+        <li><b>Preprocessing risk:</b> skipping the ImageNet normalisation shifts the frozen filters outside the range they were trained on and degrades the results.</li>
+      </ul>
+      <h2>What I would improve</h2>
+      <p>Crop faces automatically before prediction, test on a wider set of photos, and compare the frozen version with a partly unfrozen one.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with help from Claude, an AI assistant, and checked by me. © 2026 Amara Ndukwe</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>
