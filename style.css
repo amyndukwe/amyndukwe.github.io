@@ -9,24 +9,60 @@
   --pink: #D98AA8;
   --gold: #C2A055;
   --gray: #3A3F4B;
+  --header-h: 64px;
   --heading: "Agrave Pro", Georgia, serif;
   --body: "Segoe UI", Arial, sans-serif;
+  --script: "Great Vibes", cursive;
 }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 body { margin: 0; font-family: var(--body); color: var(--text); background: var(--bg); line-height: 1.7; }
-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 16px 32px; background: var(--bg); position: sticky; top: 0; border-bottom: 1px solid rgba(217, 138, 168, 0.35); }
-.brand { color: var(--text); font-family: var(--heading); font-weight: 700; text-decoration: none; font-size: 26px; }
-nav a { color: var(--text); margin-left: 20px; text-decoration: none; font-family: var(--heading); font-size: 20px; }
+img { max-width: 100%; }
+
+header { display: flex; justify-content: space-between; align-items: center; height: var(--header-h); padding: 0 32px; background: var(--bg); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(217, 138, 168, 0.35); }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--pink); color: var(--bg); font-family: var(--script); font-size: 22px; line-height: 1; }
+.name { font-family: var(--script); font-size: 32px; color: var(--text); line-height: 1; }
+nav { display: flex; gap: 22px; }
+nav a { color: var(--text); text-decoration: none; font-family: var(--heading); font-size: 16px; }
 nav a:hover { color: var(--gold); }
-section { padding: 56px max(24px, calc((100% - 980px) / 2)); border-bottom: 1px solid var(--gray); }
-.hero { padding-top: 80px; padding-bottom: 56px; }
-.eyebrow { color: var(--pink); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.burger { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.burger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; }
+
+section { padding: 72px max(24px, calc((100% - 980px) / 2)); border-bottom: 1px solid var(--gray); }
+.photo1 { background: linear-gradient(rgba(13,17,23,0.78), rgba(13,17,23,0.78)), url("pexels-steve-6320578.jpg") center / cover; }
+.photo2 { background: linear-gradient(rgba(13,17,23,0.78), rgba(13,17,23,0.78)), url("pexels-tara-winstead-8386440.jpg") center / cover; }
+
+.hero { min-height: calc(100svh - var(--header-h)); display: flex; align-items: center; }
+.hero-inner { max-width: 900px; }
 h1, h2, h3 { font-family: var(--heading); color: var(--blue); }
-h1 { font-size: 48px; line-height: 1.15; margin: 8px 0 16px; }
+h1 { font-size: clamp(36px, 6vw, 68px); line-height: 1.15; margin: 0 0 32px; }
 h2 { font-size: 36px; margin: 0 0 16px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+
+.buttons { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.primary { background: var(--gold); color: var(--bg); }
+.primary:hover { background: #D3B466; }
+.tertiary { color: var(--text); text-decoration: underline; text-underline-offset: 6px; }
+.tertiary:hover { color: var(--gold); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .card { background: var(--panel); border-radius: 12px; padding: 24px; }
 .soon { color: var(--gold); font-size: 14px; font-weight: 700; }
 a { color: var(--gold); }
 .contact { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
 .contact img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
 footer { text-align: center; padding: 32px; color: #9AA3B8; }
+
+@media (max-width: 800px) {
+  header { padding: 0 20px; }
+  .name { font-size: 28px; }
+  .burger { display: block; }
+  nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); padding: 8px 20px 16px; border-bottom: 1px solid var(--gray); }
+  nav.open { display: flex; }
+  nav a { padding: 12px 0; font-size: 18px; }
+  section { padding: 48px 20px; }
+  h2 { font-size: 28px; }
+  .contact { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .contact img { width: 160px; height: 160px; }
+}
