@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html#top">
       <span class="logo">AN</span>
       <span class="name">Amara Ndukwe</span>
     </a>
@@ -18,13 +18,13 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#powerapps">Power Apps</a>
-      <a href="#responsible">Responsible AI</a>
-      <a href="#reflection">Reflection</a>
-      <a href="#goals">Career goals</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#powerapps">Power Apps</a>
+      <a href="index.html#responsible">Responsible AI</a>
+      <a href="index.html#reflection">Reflection</a>
+      <a href="index.html#goals">Career goals</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
@@ -44,36 +44,62 @@
 
     <section id="about">
       <h2>About me</h2>
-      <p>[Your short introduction: your background, the NorQuest diploma, and what you bring from Power Platform work.]</p>
+      <p>I work full time as a solutions designer in Microsoft 365 and Power Platform consulting, and I am completing the Machine Learning Analysis diploma at NorQuest College part time. I hold the IRS Enrolled Agent (EA) designation, so finance questions are familiar ground for me.</p>
+      <p>[Add two sentences in your own words: what kind of problems you enjoy, and the roles you want next.]</p>
     </section>
 
     <section id="projects" class="photo2">
       <h2>Projects</h2>
       <div class="cards">
-        <div class="card"><h3>GoAuto</h3><p>Predicting monthly service revenue for dealerships.</p><p class="soon">Case study coming next</p></div>
-        <div class="card"><h3>BVGEC financial model</h3><p>An NPV model and calculator for a solar co-op.</p><p class="soon">Case study coming next</p></div>
-        <div class="card"><h3>Face recognition</h3><p>[One line once you share the details.]</p><p class="soon">Case study coming next</p></div>
+        <div class="card">
+          <h3>GoAuto</h3>
+          <p>Predicting monthly service revenue for dealerships, with an API, Docker and experiment tracking.</p>
+          <p class="soon">Case study coming next</p>
+        </div>
+        <div class="card">
+          <h3>BVGEC financial model</h3>
+          <p>An NPV model, calculator and chatbot that answer one question for a solar co-op: is the project worth building?</p>
+          <a class="more" href="bvgec.html">Read the case study</a>
+        </div>
+        <div class="card">
+          <h3>Face recognition</h3>
+          <p>[One line once you share the details.]</p>
+          <p class="soon">Case study coming next</p>
+        </div>
       </div>
     </section>
 
     <section id="powerapps">
       <h2>Power Apps and dashboards</h2>
-      <p>[Two or three examples, described without client or employer names.]</p>
+      <p>These are examples of business tools I have designed and built. Client details are left out, and I can show more in conversation.</p>
+      <div class="cards">
+        <div class="card"><h3>Idea submission and triage app</h3><p>A Power Apps tool where people submit ideas, reviewers triage them, and colleagues like and comment.</p></div>
+        <div class="card"><h3>Product health dashboard</h3><p>A Power BI dashboard for leaders to track how products are doing and make decisions.</p></div>
+        <div class="card"><h3>Risk analysis dashboard</h3><p>A Power BI dashboard for managers to monitor risk.</p></div>
+      </div>
+      <p><a href="https://ndukweamaraj.wixsite.com/amara">See the visual design work on my UX portfolio</a></p>
     </section>
 
     <section id="responsible" class="photo1">
       <h2>Responsible AI in practice</h2>
-      <p>[Limits, bias, privacy and explainability, with examples from your projects.]</p>
+      <p>On the BVGEC project we treated limits as part of the result, not a footnote:</p>
+      <ul>
+        <li><b>Data limits:</b> our data was synthetic practice data over five years, so we say plainly what it can and cannot show.</li>
+        <li><b>Explainability:</b> the calculator and chatbot are rules-based. They run the same formulas as the model, so every answer can be traced to an input.</li>
+        <li><b>Assumptions:</b> we flagged inputs we could not confirm, such as the discount rate, and showed how much each one moves the answer.</li>
+        <li><b>Privacy:</b> no client data is published here, and I use no confidential material in AI tools.</li>
+      </ul>
     </section>
 
     <section id="reflection">
       <h2>Reflection</h2>
-      <p>[What you did, what you learned, what you would improve.]</p>
+      <p>One lesson from BVGEC: when I changed the calculation engine, one chart still used the old baseline and drew wrong bars. I now re-run every cell and check the key numbers whenever the model changes.</p>
+      <p>[Add what you did personally, what you learned, and what you would improve next time.]</p>
     </section>
 
     <section id="goals" class="photo2">
       <h2>Career goals</h2>
-      <p>[The roles you want and how you want to grow.]</p>
+      <p>[Replace with your own words: the roles you want, the value you bring, and how you want to grow.]</p>
     </section>
 
     <section id="contact">
@@ -89,7 +115,7 @@
   </main>
 
   <footer>
-    <p>How I used AI: [we will write this together]. © 2026 Amara Ndukwe</p>
+    <p>I used Claude, an AI assistant, to help build this site, the BVGEC calculator and chatbot, and early drafts of the text. I checked and edited the results. [Confirm or change this note.] © 2026 Amara Ndukwe</p>
   </footer>
 
   <script>
