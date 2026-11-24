@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GoAuto revenue prediction | Amara Ndukwe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html#top">
+      <span class="logo">AN</span>
+      <span class="name">Amara Ndukwe</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#powerapps">Power Apps</a>
+      <a href="index.html#responsible">Responsible AI</a>
+      <a href="index.html#reflection">Reflection</a>
+      <a href="index.html#goals">Career goals</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case">
+    <section>
+      <a class="back" href="index.html#projects">Back to projects</a>
+      <h1>GoAuto: predicting monthly service revenue for dealerships</h1>
+      <p>Group project for CMPT 2500 (ModelOps team): taking a machine learning model from a notebook to a tested, containerised API.</p>
+      <div class="stats">
+        <div class="stat"><b>[R² __]</b>model fit on test data</div>
+        <div class="stat"><b>[RMSE __]</b>typical error per dealer-month</div>
+        <div class="stat"><b>2</b>API versions (v1, v2)</div>
+        <div class="stat"><b>Docker</b>API and MLflow containers</div>
+      </div>
+    </section>
+
+    <section class="photo2">
+      <h2>The problem</h2>
+      <p>A partner business records every service visit at its dealerships. Managers need to know how much service revenue each dealership will bring in next month, so they can plan staffing and parts. We built a model that predicts revenue for each dealership by month.</p>
+      <h2>My role</h2>
+      <p>[Add your part. For example: I took the Docker, logging and Docker Hub work in Lab 4, and rebuilt the earlier labs on the GoAuto project.]</p>
+    </section>
+
+    <section>
+      <h2>What we did</h2>
+      <ul>
+        <li>Turned individual service visits into one row per dealership per month.</li>
+        <li>Built features from past revenue (lag and rolling averages), service count, average revenue per service, month, year and dealer.</li>
+        <li>Trained a Gradient Boosting regressor and tracked experiments with MLflow.</li>
+        <li>Served predictions through a Flask REST API with input validation, batch requests and a versioned endpoint.</li>
+        <li>Packaged the API and MLflow in Docker, ran them together with Docker Compose, and automated common commands in a Makefile.</li>
+        <li>Used DVC to track data and models, and Git branches and pull requests for team review.</li>
+      </ul>
+    </section>
+
+    <section class="photo1">
+      <h2>What we found</h2>
+      <p>[Add two or three results from your notebook: which features mattered most, how the model compared with a simple baseline, and where it was least accurate.]</p>
+    </section>
+
+    <section>
+      <h2>Responsible AI and limits</h2>
+      <ul>
+        <li><b>Privacy:</b> the real data comes from a partner and includes vehicle identifiers, so it is not published. The repository uses a small made-up sample for tests.</li>
+        <li><b>Limits:</b> the model predicts revenue from past patterns, so it can miss one-off events such as a dealership closing or a price change.</li>
+        <li><b>Validation:</b> the API rejects missing or out-of-range inputs instead of guessing.</li>
+        <li><b>Traceability:</b> MLflow records each training run, so we can show which settings produced which result.</li>
+      </ul>
+      <h2>What I would improve</h2>
+      <p>[Add in your own words: for example, monitoring the model after release, testing on a later time period, and adding more automated tests.]</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with help from Claude, an AI assistant, and checked by me. © 2026 Amara Ndukwe</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>
