@@ -94,4 +94,14 @@ footer { text-align: center; padding: 32px; color: #9AA3B8; }
 .card p:last-child {
   margin-bottom: 0;
 }
+
+@media (min-width: 801px) {
+  .hero {
+    padding-left: max(24px, calc((100% - 1200px) / 2));
+    padding-right: max(24px, calc((100% - 1200px) / 2));
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
 }
