@@ -29,11 +29,14 @@
   </header>
 
   <main class="case">
-    <section>
-      <a class="back" href="index.html#projects">Back to projects</a>
-      <h1>BVGEC financial model: is the solar project worth building?</h1>
-      <p>Team project for Bow Valley Green Energy Co-op (BVGEC), CMPT 3835. Team: Amara, Deogyne, Mara and Rahul.</p>
-      <div class="stats">
+    <div class="case-hero" style="--hero-img: url('bvgec-hero.jpg')">
+    <a class="back" href="index.html#projects">← Back to projects</a>
+    <h1>BVGEC financial model: is the solar project worth building?</h1>
+    <p>Team project for Bow Valley Green Energy Co-op (BVGEC), CMPT 3835. Team: Amara, Deogyne, Mara and Rahul.</p>
+  </div>
+
+  <section class="band-black">
+    <div class="stats">
         <div class="stat"><b>$200,643</b>base case NPV</div>
         <div class="stat"><b>6.97%</b>project IRR</div>
         <div class="stat"><b>Year 12</b>payback</div>
@@ -41,14 +44,14 @@
       </div>
     </section>
 
-    <section class="photo2">
+    <section class="band-gray">
       <h3>The problem</h3>
       <p>BVGEC wanted to know whether its solar projects would earn more than they cost over a 25-year panel life. We expressed the answer as net present value (NPV), and we also needed to show how sure we were, since the model's generation figures ran higher than the measured data.</p>
       <h3>My role</h3>
       <p>I was Scrum Master and the machine analysis student on the team. I set up and ran the team's Scrum process in Trello and Slack, and I [built / helped build] the analysis notebook, the Streamlit calculator, the NPV chatbot and the client presentation</p>
     </section>
 
-    <section>
+    <section class="band-black">
       <h3>What we did</h3>
       <ul>
         <li>Cleaned the data (601 rows down to 579) and explored it: output follows sunlight and temperature, and snow cuts it sharply.</li>
@@ -59,7 +62,7 @@
       <p><a href="https://bvgec-npv.streamlit.app/">Try the live calculator</a></p>
     </section>
 
-    <section class="photo1">
+    <section class="band-gray">
       <h3>What we found</h3>
       <div class="fig">
         <img src="bvgec-seasonality.png" alt="Average generation by month, high in summer and low in winter">
@@ -79,7 +82,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="band-black">
       <h3>Recommendations</h3>
       <ul>
         <li>Proceed: NPV is positive in every gap we tested.</li>
@@ -89,7 +92,7 @@
       </ul>
     </section>
 
-    <section class="photo2">
+    <section class="band-gray">
       <h3>Responsible AI and limits</h3>
       <ul>
         <li>The data was synthetic practice data, so the findings show the method and not real site performance.</li>
