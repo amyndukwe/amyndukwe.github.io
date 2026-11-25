@@ -29,26 +29,29 @@
   </header>
 
   <main class="case">
-    <section>
-      <a class="back" href="index.html#projects">Back to projects</a>
-      <h1>GoAuto: predicting monthly service revenue for dealerships</h1>
-      <p>Group project for CMPT 2500 (ModelOps team): taking a machine learning model from a notebook to a tested, containerised API.</p>
-      <div class="stats">
-        <div class="stat"><b>[R² __]</b>model fit on test data</div>
-        <div class="stat"><b>[RMSE __]</b>typical error per dealer-month</div>
-        <div class="stat"><b>2</b>API versions (v1, v2)</div>
-        <div class="stat"><b>Docker</b>API and MLflow containers</div>
-      </div>
-    </section>
+  <div class="case-hero" style="--hero-img: url('goauto-hero.jpg')">
+    <a class="back" href="index.html#projects">← Back to projects</a>
+    <h1>GoAuto: predicting monthly service revenue for dealerships</h1>
+    <p>Group project for CMPT 2500 (ModelOps team): taking a machine learning model from a notebook to a tested, containerised API.</p>
+  </div>
 
-    <section class="photo2">
+  <section class="band-gray">
+    <div class="stats">
+      <div class="stat"><b>R² 0.9036</b>model fit on test data</div>
+      <div class="stat"><b>RMSE 38479.74</b>typical error per dealer-month</div>
+      <div class="stat"><b>2</b>API versions (v1, v2)</div>
+      <div class="stat"><b>Docker</b>API and MLflow containers</div>
+    </div>
+  </section>
+
+    <section class="hand-black">
       <h2>The problem</h2>
       <p>A partner business records every service visit at its dealerships. Managers need to know how much service revenue each dealership will bring in next month, so they can plan staffing and parts. We built a model that predicts revenue for each dealership by month.</p>
       <h2>My role</h2>
       <p>[Add your part. For example: I took the Docker, logging and Docker Hub work in Lab 4, and rebuilt the earlier labs on the GoAuto project.]</p>
     </section>
 
-    <section>
+    <section class="band-gray">
       <h2>What we did</h2>
       <ul>
         <li>Turned individual service visits into one row per dealership per month.</li>
@@ -60,12 +63,12 @@
       </ul>
     </section>
 
-    <section class="photo1">
+    <section class="band-black">
       <h2>What we found</h2>
       <p>[Add two or three results from your notebook: which features mattered most, how the model compared with a simple baseline, and where it was least accurate.]</p>
     </section>
 
-    <section>
+    <section class="band-gray">
       <h2>Responsible AI and limits</h2>
       <ul>
         <li><b>Privacy:</b> the real data comes from a partner and includes vehicle identifiers, so it is not published. The repository uses a small made-up sample for tests.</li>
