@@ -115,10 +115,10 @@
   </main>
 
   <footer>
-    <p>© 2026 Amara Ndukwe</p>
+    <p>Built with help from Claude, an AI assistant, and checked by me. © 2026 Amara Ndukwe</p>
   </footer>
 
-  <script>
+    <script>
     const burger = document.getElementById("burger");
     const nav = document.getElementById("nav");
     burger.addEventListener("click", () => {
@@ -129,6 +129,33 @@
       nav.classList.remove("open");
       burger.setAttribute("aria-expanded", "false");
     }));
+
+    // Highlight the nav link for the section the visitor is on
+    const links = document.querySelectorAll("nav a");
+    let locked = false;
+
+    function setActive(id) {
+      links.forEach(l =>
+        l.classList.toggle("active", l.getAttribute("href").endsWith("#" + id))
+      );
+    }
+
+    // 1) When scrolling, follow the section in the middle of the screen
+    const spy = new IntersectionObserver(entries => {
+      if (locked) return;
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    document.querySelectorAll("section[id]").forEach(s => spy.observe(s));
+
+    // 2) When a link jumps to a section, highlight it straight away
+    window.addEventListener("hashchange", () => {
+      setActive(location.hash.slice(1));
+      locked = true;
+      setTimeout(() => { locked = false; }, 900);
+    });
+
+    // 3) If the page opens already on a section, highlight it on load
+    if (location.hash) setActive(location.hash.slice(1));
   </script>
 </body>
 </html>
