@@ -29,10 +29,13 @@
   </header>
 
   <main class="case">
-    <section>
-      <a class="back" href="index.html#projects">Back to projects</a>
+    <div class="case-hero" style="--hero-img: url('keypoints-hero.jpg')">
+      <a class="back" href="index.html#projects">← Back to projects</a>
       <h1>Facial keypoint detection with transfer learning</h1>
       <p>Computer vision lab (CMPT 3520): teaching a pre-trained image model to find 68 landmarks on a face.</p>
+    </div>
+
+    <section class="band-gray">
       <div class="stats">
         <div class="stat"><b>68</b>landmarks per face (136 numbers)</div>
         <div class="stat"><b>ResNet-18</b>frozen, pre-trained backbone</div>
@@ -41,14 +44,14 @@
       </div>
     </section>
 
-    <section class="photo2">
+    <section class="band-black">
       <h2>The problem</h2>
       <p>Many face tools, such as filters, alignment and accessibility features, start by locating points on the face. The task was to predict the x and y position of 68 landmarks from a face image, reusing a network trained on millions of general photos instead of training one from scratch.</p>
       <h2>My role</h2>
-      <p>[Add your part: you completed the notebook on your own machine, fixed the dataset download, chose and explained the design, and tested the model on your own photo.]</p>
+      <p>I ran the lab notebook on my own machine, fixed the dataset download problem, chose and explained the design of the regression head, and tested the finished model on a photo of myself.</p>
     </section>
 
-    <section>
+    <section class="band-gray">
       <h2>What I did</h2>
       <ul>
         <li>Loaded a public Kaggle face-keypoint dataset and prepared the images (256×256, normalised with the ImageNet statistics the backbone expects).</li>
@@ -59,14 +62,14 @@
       </ul>
     </section>
 
-    <section class="photo1">
+    <section class="band-black">
       <h2>What I found</h2>
       <p>[Add your result: final train and test RMSE, plus the training curve screenshot.]</p>
       <p>Train and test error fell together with a small gap, so the model was not overfitting. It was limited by the frozen backbone, whose features were built for general objects and not faces. Unfreezing the last block with a much smaller learning rate would be the next step to try.</p>
       <p>On my own photo the predictions were noticeably worse than on the test set. My photo showed the face small in the frame with lots of background, while the training images were tightly cropped, so the points shifted away from the real landmarks.</p>
     </section>
 
-    <section>
+    <section class="band-gray">
       <h2>Responsible AI and limits</h2>
       <ul>
         <li><b>Privacy:</b> I used a public dataset and my own photo. This page shows [no personal photo / my photo, which I chose to share].</li>
