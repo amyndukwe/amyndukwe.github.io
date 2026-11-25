@@ -65,7 +65,25 @@
 
     <section class="band-black">
       <h3>What we found</h3>
-      <p>Seasons and paid services features mattered most.</p>
+      <ul>
+        <li>We compared a naive baseline, linear regression, random forest and gradient boosting. Gradient boosting won.</li>
+        <li>We split the data 80/20 in time order and used 5-fold time-series cross-validation, so the model never trained on the future.</li>
+        <li>On the test set: R² 0.9036, MAE $29,097, RMSE $38,480, and about 8% average percentage error.</li>
+        <li>The strongest features were the 3-month rolling average of revenue, number of services, average revenue per service, dealer and service month.</li>
+        <li>In the data itself, revenue rose from 2020 to 2024, and summer months (April to October) had the highest service volumes.</li>
+      </ul>
+      <div class="fig">
+        <img src="goauto-model.png" alt="Model pipeline and test scores for the revenue forecast">
+        <p>The modelling pipeline and test scores.</p>
+      </div>
+      <div class="fig">
+        <img src="goauto-insights.png" alt="Headline numbers: total revenue, average revenue per service, transactions and R squared">
+        <p>Headline numbers from the dataset and the model.</p>
+      </div>
+      <div class="fig">
+        <img src="goauto-dashboard.png" alt="Power BI dashboard of revenue trends and service cost">
+        <p>The Power BI dashboard we built to explore the data (dealer names covered).</p>
+      </div>
     </section>
 
     <section class="band-gray">
