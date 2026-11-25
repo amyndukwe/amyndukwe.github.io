@@ -64,7 +64,18 @@
 
     <section class="band-black">
       <h2>What I found</h2>
-      <p>[Add your result: final train and test RMSE, plus the training curve screenshot.]</p>
+      <div class="fig">
+        <img src="keypoints-curve.png" alt="Training and test error falling together over the epochs">
+        <p>Train and test error fell together over the epochs.</p>
+      </div>
+      <div class="fig">
+        <img src="keypoints-results.png" alt="Predicted landmarks on test images">
+        <p>Predicted landmarks on test images.</p>
+      </div>
+      <div class="fig">
+        <img src="keypoints-photo.png" alt="Predicted landmarks on my own photo">
+        <p>On my own photo, the points shifted because the face is small in the frame.</p>
+      </div>
       <p>Train and test error fell together with a small gap, so the model was not overfitting. It was limited by the frozen backbone, whose features were built for general objects and not faces. Unfreezing the last block with a much smaller learning rate would be the next step to try.</p>
       <p>On my own photo the predictions were noticeably worse than on the test set. My photo showed the face small in the frame with lots of background, while the training images were tightly cropped, so the points shifted away from the real landmarks.</p>
     </section>
@@ -83,7 +94,7 @@
   </main>
 
   <footer>
-    <p>Built with help from Claude, an AI assistant, and checked by me. © 2026 Amara Ndukwe</p>
+    <p> © 2026 Amara Ndukwe</p>
   </footer>
 
   <script>
