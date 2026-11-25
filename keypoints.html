@@ -39,7 +39,7 @@
       <div class="stats">
         <div class="stat"><b>68</b>landmarks per face (136 numbers)</div>
         <div class="stat"><b>ResNet-18</b>frozen, pre-trained backbone</div>
-        <div class="stat"><b>[RMSE __]</b>test error, standardised units</div>
+        <div class="stat"><b>RMSE 0.2523</b>test error, standardised units</div>
         <div class="stat"><b>5 epochs</b>trained on CPU</div>
       </div>
     </section>
@@ -83,7 +83,7 @@
     <section class="band-gray">
       <h3>Responsible AI and limits</h3>
       <ul>
-        <li><b>Privacy:</b> I used a public dataset and my own photo. This page shows [no personal photo / my photo, which I chose to share].</li>
+        <li><b>Privacy:</b> I used a public dataset and my own photo.</li>
         <li><b>Generalisation:</b> I tested on one photo, so I cannot say how well the model works across different faces, lighting, poses or image framing.</li>
         <li><b>Not recognition:</b> the model locates landmarks. It does not identify anyone, and it should not be presented as doing so.</li>
         <li><b>Preprocessing risk:</b> skipping the ImageNet normalisation shifts the frozen filters outside the range they were trained on and degrades the results.</li>
