@@ -114,6 +114,18 @@ footer { text-align: center; padding: 32px; color: #9AA3B8; }
   border-bottom: 1px solid var(--gray);
 }
 
+/* Nav link states: hover, keyboard focus, and the current section */
+nav a {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+nav a:hover,
+nav a:focus-visible,
+nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
 /* Alternating section backgrounds on project pages */
 .band-black { background: #08090C; }
 .band-gray  { background: #1B1F28; }
