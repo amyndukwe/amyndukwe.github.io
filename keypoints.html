@@ -45,14 +45,14 @@
     </section>
 
     <section class="band-black">
-      <h2>The problem</h2>
+      <h3>The problem</h3>
       <p>Many face tools, such as filters, alignment and accessibility features, start by locating points on the face. The task was to predict the x and y position of 68 landmarks from a face image, reusing a network trained on millions of general photos instead of training one from scratch.</p>
-      <h2>My role</h2>
+      <h3>My role</h3>
       <p>I ran the lab notebook on my own machine, fixed the dataset download problem, chose and explained the design of the regression head, and tested the finished model on a photo of myself.</p>
     </section>
 
     <section class="band-gray">
-      <h2>What I did</h2>
+      <h3>What I did</h3>
       <ul>
         <li>Loaded a public Kaggle face-keypoint dataset and prepared the images (256×256, normalised with the ImageNet statistics the backbone expects).</li>
         <li>Froze the ResNet-18 backbone and replaced its final layer with a regression head: two hidden layers (512 and 256 units) with batch normalisation and dropout, ending in 136 outputs with no activation.</li>
@@ -63,7 +63,7 @@
     </section>
 
     <section class="band-black">
-      <h2>What I found</h2>
+      <h3>What I found</h3>
       <div class="fig">
         <img src="keypoints-curve.png" alt="Training and test error falling together over the epochs">
         <p>Train and test error fell together over the epochs.</p>
@@ -81,14 +81,14 @@
     </section>
 
     <section class="band-gray">
-      <h2>Responsible AI and limits</h2>
+      <h3>Responsible AI and limits</h3>
       <ul>
         <li><b>Privacy:</b> I used a public dataset and my own photo. This page shows [no personal photo / my photo, which I chose to share].</li>
         <li><b>Generalisation:</b> I tested on one photo, so I cannot say how well the model works across different faces, lighting, poses or image framing.</li>
         <li><b>Not recognition:</b> the model locates landmarks. It does not identify anyone, and it should not be presented as doing so.</li>
         <li><b>Preprocessing risk:</b> skipping the ImageNet normalisation shifts the frozen filters outside the range they were trained on and degrades the results.</li>
       </ul>
-      <h2>What I would improve</h2>
+      <h3>What I would improve</h3>
       <p>Crop faces automatically before prediction, test on a wider set of photos, and compare the frozen version with a partly unfrozen one.</p>
     </section>
   </main>
