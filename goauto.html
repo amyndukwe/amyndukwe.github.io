@@ -31,7 +31,7 @@
   <main class="case">
   <div class="case-hero" style="--hero-img: url('goauto-hero.jpg')">
     <a class="back" href="index.html#projects">← Back to projects</a>
-    <h1>GoAuto: predicting monthly service revenue for dealerships</h1>
+    <h3>GoAuto: predicting monthly service revenue for dealerships</h3>
     <p>Group project for CMPT 2500 (ModelOps team): taking a machine learning model from a notebook to a tested, containerised API.</p>
   </div>
 
@@ -45,14 +45,14 @@
   </section>
 
     <section class="hand-black">
-      <h2>The problem</h2>
+      <h3>The problem</h3>
       <p>A partner business records every service visit at its dealerships. Managers need to know how much service revenue each dealership will bring in next month, so they can plan staffing and parts. We built a model that predicts revenue for each dealership by month.</p>
-      <h2>My role</h2>
+      <h3>My role</h3>
       <p>[Add your part. For example: I took the Docker, logging and Docker Hub work in Lab 4, and rebuilt the earlier labs on the GoAuto project.]</p>
     </section>
 
     <section class="band-gray">
-      <h2>What we did</h2>
+      <h3>What we did</h3>
       <ul>
         <li>Turned individual service visits into one row per dealership per month.</li>
         <li>Built features from past revenue (lag and rolling averages), service count, average revenue per service, month, year and dealer.</li>
@@ -64,19 +64,19 @@
     </section>
 
     <section class="band-black">
-      <h2>What we found</h2>
+      <h3>What we found</h3>
       <p>[Add two or three results from your notebook: which features mattered most, how the model compared with a simple baseline, and where it was least accurate.]</p>
     </section>
 
     <section class="band-gray">
-      <h2>Responsible AI and limits</h2>
+      <h3>Responsible AI and limits</h3>
       <ul>
         <li><b>Privacy:</b> the real data comes from a partner and includes vehicle identifiers, so it is not published. The repository uses a small made-up sample for tests.</li>
         <li><b>Limits:</b> the model predicts revenue from past patterns, so it can miss one-off events such as a dealership closing or a price change.</li>
         <li><b>Validation:</b> the API rejects missing or out-of-range inputs instead of guessing.</li>
         <li><b>Traceability:</b> MLflow records each training run, so we can show which settings produced which result.</li>
       </ul>
-      <h2>What I would improve</h2>
+      <h3>What I would improve</h3>
       <p>[Add in your own words: for example, monitoring the model after release, testing on a later time period, and adding more automated tests.]</p>
     </section>
   </main>
