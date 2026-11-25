@@ -104,3 +104,16 @@ footer { text-align: center; padding: 32px; color: #9AA3B8; }
     grid-template-columns: 1fr 1.2fr;
   }
 }
+
+/* Project page banner: photo with a dark overlay so text stays readable */
+.case-hero {
+  background:
+    linear-gradient(rgba(8, 9, 12, 0.72), rgba(8, 9, 12, 0.9)),
+    var(--hero-img) center / cover no-repeat;
+  padding: 72px max(24px, calc((100% - 980px) / 2)) 56px;
+  border-bottom: 1px solid var(--gray);
+}
+
+/* Alternating section backgrounds on project pages */
+.band-black { background: #08090C; }
+.band-gray  { background: #1B1F28; }
