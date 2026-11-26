@@ -129,3 +129,7 @@ nav a.active {
 /* Alternating section backgrounds on project pages */
 .band-black { background: #08090C; }
 .band-gray  { background: #1B1F28; }
+
+/* Skill chips */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 8px 0 20px; }
+.chips li { background: #1D2A4A; color: var(--text); padding: 6px 14px; border-radius: 999px; font-size: 15px; }
