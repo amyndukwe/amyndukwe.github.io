@@ -242,8 +242,8 @@ html[data-theme="light"] {
   --blue: #2B55B8; --pink: #B24A72; --gold: #8A6A1F; --gray: #D6DAE5;
 }
 html[data-theme="light"] .primary:hover { background: #745A19; }
-html[data-theme="light"] .photo1 { background: linear-gradient(rgba(246,247,251,0.88), rgba(246,247,251,0.88)), url("pexels-steve-6320578.jpg") center / cover; }
-html[data-theme="light"] .photo2 { background: linear-gradient(rgba(246,247,251,0.88), rgba(246,247,251,0.88)), url("pexels-tara-winstead-8386440.jpg") center / cover; }
+html[data-theme="light"] .photo1 { background: linear-gradient(rgba(246,247,251,0.88), rgba(246,247,251,0.65)), url("pexels-steve-6320578.jpg") center / cover; }
+html[data-theme="light"] .photo2 { background: linear-gradient(rgba(246,247,251,0.88), rgba(246,247,251,0.65)), url("pexels-tara-winstead-8386440.jpg") center / cover; }
 html[data-theme="light"] .case-hero { background: linear-gradient(rgba(246,247,251,0.82), rgba(246,247,251,0.93)), var(--hero-img) center / cover no-repeat; }
 html[data-theme="light"] .band-black { background: #FFFFFF; }
 html[data-theme="light"] .band-gray { background: #EDEFF6; }
