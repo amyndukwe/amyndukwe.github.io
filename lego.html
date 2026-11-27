@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LEGO piece detection | Amara Ndukwe</title>
+  <meta name="description" content="Team project for CMPT 3520: counting and detecting LEGO pieces in images with classical computer vision. I worked on Canny edge detection and threshold testing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html#top">
+      <span class="logo">AN</span>
+      <span class="name">Amara Ndukwe</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="index.html#about">About</a>
+      <a class="active" href="index.html#projects">Projects</a>
+      <a href="index.html#powerapps">Power Apps</a>
+      <a href="index.html#responsible">Responsible AI</a>
+      <a href="index.html#reflection">Reflection</a>
+      <a href="index.html#goals">Career goals</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case">
+    <div class="case-hero" style="--hero-img: url('lego-hero.jpg')">
+      <a class="back" href="index.html#projects">← Back to projects</a>
+      <h1>LEGO piece detection with classical computer vision</h1>
+      <p>Team project for CMPT 3520 (Machine Learning II, Team 2): finding and counting LEGO pieces in images, starting with methods that need no trained model.</p>
+    </div>
+
+    <section class="band-gray">
+      <div class="stats">
+        <div class="stat"><b>Phase 1</b>classical computer vision</div>
+        <div class="stat"><b>Canny</b>edge detection, my part</div>
+        <div class="stat"><b>2</b>thresholds tested: low and high</div>
+        <div class="stat"><b>Phase 2</b>deep-learning object detection</div>
+      </div>
+    </section>
+
+    <section class="band-black">
+      <h2>The problem</h2>
+      <p>Counting and recognising LEGO pieces by eye is slow and easy to get wrong. The goal was to find and count pieces in photos automatically. The project has two phases. Phase 1 uses classical computer vision: hand-chosen image-processing steps with no trained model. Phase 2 moves to deep-learning object detection.</p>
+      <h2>My role</h2>
+      <p>I took edge detection and parameter testing. I ran the Canny edge detector on the LEGO images and tested how its two thresholds change what it finds. My teammates covered thresholding, Otsu's method and chromaticity, which separates pieces by colour.</p>
+    </section>
+
+    <section class="band-gray">
+      <h2>What I did</h2>
+      <ul>
+        <li>Used Canny edge detection to trace the outlines of the pieces.</li>
+        <li>Tested combinations of the low and high thresholds and compared the edge images they produced.</li>
+      </ul>
+      <h2>How Canny works, in plain words</h2>
+      <p>Canny first smooths the image to remove noise. It then finds the places where brightness changes sharply, which are the edges. Two thresholds decide which edges to keep. Edges stronger than the high threshold are kept. Weaker edges, above the low threshold, are kept only if they connect to a strong one.</p>
+    </section>
+
+    <section class="band-black">
+      <h2>What the method teaches</h2>
+      <ul>
+        <li>A threshold that is too low picks up noise, such as texture and shadows, as if it were piece outlines.</li>
+        <li>A threshold that is too high breaks the outlines or drops weak edges.</li>
+        <li>Lighting, shadows, the background and the colour of the piece all change what Canny finds, so settings tuned on one image may not suit another.</li>
+      </ul>
+    </section>
+
+    <section class="band-gray">
+      <h2>Responsible AI and limits</h2>
+      <ul>
+        <li><b>Data:</b> the images show LEGO pieces only, with no people or personal data.</li>
+        <li><b>Limits:</b> classical methods do not learn. They need hand-tuned settings, and those settings may not carry over to new images.</li>
+        <li><b>Explainability:</b> every step is a visible image-processing operation, so it is easy to inspect why a piece was found or missed.</li>
+      </ul>
+      <h2>What I would improve</h2>
+      <p>I would test the thresholds on a wider set of images, choose them automatically instead of by hand, and compare the classical results with the deep-learning detector from Phase 2.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Amara Ndukwe</p>
+    <a class="to-top" href="#">↑ Back to top</a>
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>
