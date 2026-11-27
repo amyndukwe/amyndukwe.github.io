@@ -7,6 +7,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hero .eyebrow {
+      display: flex; align-items: center; gap: 14px;
+      margin: 0 0 18px; color: var(--blue);
+      font-family: var(--heading); font-size: 14px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+    }
+    .hero .eyebrow::before { content: ""; width: 40px; height: 2px; background: var(--blue); }
+
+    .hero h1.hero-headline {
+      margin: 0 0 20px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.12; letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .hero h1.hero-headline .grad {
+      color: var(--blue); background: none; -webkit-text-fill-color: var(--blue);
+    }
+
+    .hero .hero-sub {
+      margin: 0 0 34px; max-width: 460px;
+      color: var(--text); opacity: 0.75; font-size: 18px; line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <header>
