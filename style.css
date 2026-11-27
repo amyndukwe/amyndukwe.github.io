@@ -136,3 +136,58 @@ nav a.active {
 /* Skill chips */
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 8px 0 20px; }
 .chips li { background: #1D2A4A; color: var(--text); padding: 6px 14px; border-radius: 999px; font-size: 15px; }
+
+/* Hero buttons: more stylish */
+.buttons { gap: 14px; }
+
+.btn {
+  padding: 14px 30px;
+  letter-spacing: 0.3px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+
+/* Projects: gold pill with a soft glow and a sliding arrow */
+.primary {
+  background: linear-gradient(135deg, #E3C677, var(--gold));
+  box-shadow: 0 8px 22px rgba(201, 169, 97, 0.28);
+}
+.primary::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform .2s ease;
+}
+.primary:hover {
+  background: linear-gradient(135deg, #EBD28C, #D3B466);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(201, 169, 97, 0.4);
+}
+.primary:hover::after { transform: translateX(5px); }
+
+/* Contact me: outlined pill instead of a plain underline */
+.tertiary {
+  text-decoration: none;
+  color: var(--text);
+  border: 1.5px solid var(--gold);
+  background: rgba(255, 255, 255, 0.04);
+}
+.tertiary:hover {
+  background: var(--gold);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+/* Keyboard focus ring */
+.btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* Light mode: soften the glow */
+html[data-theme="light"] .primary {
+  background: linear-gradient(135deg, #A98630, var(--gold));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(138, 106, 31, 0.25);
+}
+html[data-theme="light"] .primary:hover {
+  background: linear-gradient(135deg, #745A19, #8A6A1F);
+}
+html[data-theme="light"] .tertiary { background: transparent; }
+html[data-theme="light"] .tertiary:hover { color: #fff; }
