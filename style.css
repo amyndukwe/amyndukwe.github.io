@@ -262,3 +262,29 @@ html[data-theme="light"] .hero-img { box-shadow: 0 20px 50px rgba(27, 32, 48, 0.
 @media (max-width: 700px) {
   #projects .cards { grid-template-columns: 1fr; }
 }
+
+/* Keep the header on one line, and switch to the menu icon earlier */
+.name,
+nav a { white-space: nowrap; }
+
+@media (max-width: 1080px) {
+  header { padding: 0 20px; }
+  .burger { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    padding: 8px 20px 16px;
+    border-bottom: 1px solid var(--gray);
+  }
+  nav.open { display: flex; }
+  nav a { padding: 12px 0; font-size: 18px; }
+  header nav { margin-left: 0; }
+  .theme-toggle { margin-left: auto; padding: 8px; }
+  .theme-toggle::before { display: none; }
+}
